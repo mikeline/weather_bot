@@ -67,17 +67,9 @@ def handle_text(message):
 @bot.message_handler(content_types=['text'])
 def handle_text(message):
     if message.text.lower() == "hi":
-        if message.from_user.first_name == "s":
-            gif = open('forsabira.gif', 'rb')
-            answer = "Hi, Sabira. Misha just asked me to send you some gif.\n" + "And he also says he is really sorry.."
-            bot.send_message(message.from_user.id, answer)
-            bot.send_document(message.from_user.id, gif)
-            answer = 'gif'
-            log(message, answer)
-        else:
-            answer = "Hi"
-            bot.send_message(message.from_user.id, answer)
-            log(message, answer)
+        answer = "Hi"
+        bot.send_message(message.from_user.id, answer)
+        log(message, answer)
     elif message.text.lower() == "how are you?":
         answer = "I'm good"
         bot.send_message(message.from_user.id, answer)
